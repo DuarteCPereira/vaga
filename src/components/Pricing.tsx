@@ -2,27 +2,39 @@ type Plan = {
   name: string
   summary: string
   price: string
+  period: string
   items: string[]
   cta: string
   href: string
   featured?: boolean
 }
 
-// Preços e limites por definir: substitui os valores entre parênteses retos.
+// Os limites de marcações por semana são uma proposta inicial: ajusta-os aqui.
 const PLANS: Plan[] = [
   {
+    name: 'Grátis',
+    summary: 'Para experimentar ou para quem trabalha sozinho.',
+    price: '0 €',
+    period: 'para sempre',
+    items: ['Página de marcações com endereço da Vaga', '1 colaborador', 'Até 15 marcações por semana'],
+    cta: 'Começar grátis',
+    href: '#criar-gratis',
+  },
+  {
     name: 'Essencial',
-    summary: 'Para quem só precisa de receber marcações.',
-    price: '[PREÇO]',
-    items: ['Página de marcações com endereço da Vaga', 'Agenda, lembretes e calendário sincronizado', '[N] colaboradores'],
+    summary: 'Para uma equipa pequena com a agenda cheia.',
+    price: '7,99 €',
+    period: '/mês',
+    items: ['Tudo o que está no Grátis', 'Até 3 colaboradores', 'Até 100 marcações por semana'],
     cta: 'Escolher Essencial',
     href: '#criar-essencial',
   },
   {
     name: 'Profissional',
-    summary: 'Para quem quer um site próprio e uma equipa maior.',
-    price: '[PREÇO]',
-    items: ['Tudo o que está no Essencial', 'Site personalizado com a tua marca', 'Domínio próprio', 'Até [N] colaboradores'],
+    summary: 'Para quem quer um site próprio e não quer limites.',
+    price: '14,99 €',
+    period: '/mês',
+    items: ['Tudo o que está no Essencial', 'Site personalizado com a tua marca', 'Domínio próprio', 'Colaboradores e marcações sem limite'],
     cta: 'Escolher Profissional',
     href: '#criar-profissional',
     featured: true,
@@ -41,8 +53,8 @@ export function Pricing() {
   return (
     <section id="planos" className="container section" aria-labelledby="planos-titulo">
       <div className="section__intro">
-        <h2 id="planos-titulo" className="display-lg">Dois planos, sem surpresas</h2>
-        <p className="body-lg muted">Começa pelo essencial e passa para o Profissional quando o negócio crescer.</p>
+        <h2 id="planos-titulo" className="display-lg">Três planos, sem surpresas</h2>
+        <p className="body-lg muted">Começa de graça e muda de plano quando o negócio crescer.</p>
       </div>
       <div className="plans">
         {PLANS.map((plan) => (
@@ -53,7 +65,7 @@ export function Pricing() {
             </div>
             <p className={plan.featured ? undefined : 'muted'}>{plan.summary}</p>
             <p className="plan__price">
-              {plan.price} €<span className="plan__period"> /mês</span>
+              {plan.price}<span className="plan__period"> {plan.period}</span>
             </p>
             <ul className="plan__list">
               {plan.items.map((item) => (

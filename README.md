@@ -28,5 +28,4 @@ O site fica em `https://duartecpereira.github.io/vaga/`. Se mudares o nome do re
 
 ## Por fazer
 
-- Preços e número de colaboradores dos planos (`src/components/Pricing.tsx`).
 - Páginas de entrada, registo, privacidade e termos (as ligações ainda são âncoras).
