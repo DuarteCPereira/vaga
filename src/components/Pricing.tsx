@@ -32,7 +32,7 @@ const PLANS: Plan[] = [
   {
     name: 'Profissional',
     summary: 'Para quem quer um site próprio e não quer limites.',
-    price: '14,99 €',
+    price: '19,99 €',
     period: '/mês',
     items: ['Tudo o que está no Essencial', 'Site personalizado com a tua marca', 'Domínio próprio', 'Colaboradores e marcações sem limite'],
     cta: 'Escolher Profissional',
